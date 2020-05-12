@@ -1,8 +1,21 @@
+:root{
+    --text-a-color: rgba(0,0,0,0.87);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
 html, body {
     height: 100%;
     margin: auto;
 }
-body {
+body{
     font-family: arial, sans-serif;
     font-size: 13px;
     display: flex;
@@ -15,6 +28,19 @@ header {
     align-self: flex-end;
     padding: 15px;
 }
+
+#more{
+    background-image: url("../icons/app-icon.png");
+    background-position: -132px -38px;
+    background-size: 528px 68px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+
 main {
     order: 1;
     flex-grow: 3;
@@ -50,7 +76,7 @@ footer {
     flex-flow: row-reverse;
 }
 a {
-    color:inherit;
+    color:var(--text-a-color);
     text-decoration: inherit;
     margin: 9px;
 }
@@ -99,4 +125,6 @@ input {
 img{
     padding: 25px;
 }
+
+
     
