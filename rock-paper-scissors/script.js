@@ -3,55 +3,53 @@ function getRndInteger(min, max) {
   }
 
 function computerPlay(){
-	var randomChoice = "";
-	switch (getRndInteger(1,4)) {
-		case 1:
-			randomChoice = 'rock';
-			break;
-		case 2:
-			randomChoice = 'paper';
-			break;
-		case 3:
-			randomChoice = 'scissors';
-			break;
-		default:
-			break;
-	}
-	console.log("Computer choice: " + randomChoice)
-	return randomChoice;
+	var randomChoice = {
+		1: "rock",
+		2: "paper",
+		3: "scissors"
+	};
+	return randomChoice[getRndInteger(1,4)];
 }
-
 
 function playRound(playerSelection, computerSelection){
+	var result = "";
 	// Regras para a Rock
-		if (playerSelection == computerSelection){
-			console.log("Empate")
+		if (playerSelection === computerSelection){
+				result = "Empate";
+				return result;
 		}
-		else if(playerSelection == "paper" && computerSelection =="scissors"){
-			console.log("Voce perdeu. Tesoura derrota pedra.")
+		else if(playerSelection == "paper" 
+				&& computerSelection =="scissors"){
+				result = "Perdeu";
 		}
-		else if(playerSelection == "paper" && computerSelection == "rock"){
-			console.log("Voce ganhou. Papel derrota Pedra.")
+		else if(playerSelection == "paper" 
+				&& computerSelection == "rock"){
+				result = "Ganhou";
 		}
 		// Regras para a Paper
-		else if(playerSelection == "rock" && computerSelection =="paper"){
-			console.log("Voce perdeu. Papel derrota pedra.")
+		else if(playerSelection == "rock" 
+				&& computerSelection =="paper"){
+				result = "Perdeu";
 		}
-		else if(playerSelection == "rock" && computerSelection == "scissors"){
-			console.log("Voce ganhou. Pedra derrota Papel.")
+		else if(playerSelection == "rock" 
+				&& computerSelection == "scissors"){
+				result = "Ganhou";
 		}
 		// Regras para a Scissors
-		else if(playerSelection == "scissors" && computerSelection =="rock"){
-			console.log("Voce perdeu. Pedra derrota tesoura.")
+		else if(playerSelection == "scissors" 
+				&& computerSelection =="rock"){
+				result = "Perdeu";
 		}
-		else if(playerSelection == "scissors" && computerSelection == "paper"){
-			console.log("Voce ganhou. Tesoura derrota Papel.")
+		else if(playerSelection == "scissors" 
+					&& computerSelection == "paper"){
+				result = "Ganhou";
 		}
+		return `Você ${result}. ${playerSelection} derrota ${computerSelection}.`;
 }
 
-const playerSelection = 'scissors';
+const playerSelection = 'rock';
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection))
+console.log(playRound(playerSelection, computerSelection));
 
 
 
