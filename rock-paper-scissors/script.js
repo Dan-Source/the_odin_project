@@ -44,12 +44,36 @@ function playRound(playerSelection, computerSelection){
 					&& computerSelection == "paper"){
 				result = "Ganhou";
 		}
-		return `Você ${result}. ${playerSelection} derrota ${computerSelection}.`;
+		return `Você ${result}.`;
 }
 
-const playerSelection = 'rock';
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+const btnRock =  document.querySelector("#btn-rock");
+
+btnRock.addEventListener('click', () =>{
+	const playerSelection = 'rock';
+	const computerSelection = computerPlay();
+	playRound(playerSelection, computerSelection);
+	alert(playRound(playerSelection, computerSelection));
+	}
+)
+
+const btnPaper =  document.querySelector("#btn-paper");
+
+btnPaper.addEventListener('click', () =>{
+	const playerSelection = 'paper';
+	const computerSelection = computerPlay();
+	playRound(playerSelection, computerSelection);
+	alert(playRound(playerSelection, computerSelection));
+})
+
+const btnScissors =  document.querySelector("#btn-scissors");
+
+btnScissors.addEventListener('click', () =>{
+	const playerSelection = 'scissors';
+	const computerSelection = computerPlay();
+	alert(playRound(playerSelection, computerSelection));
+})
+
 
 
 
