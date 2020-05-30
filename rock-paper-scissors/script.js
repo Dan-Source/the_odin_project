@@ -47,10 +47,16 @@ function playRound(playerSelection, computerSelection){
 		return `Você ${result}.`;
 }
 
-const btnRock =  document.querySelector("#btn-rock");
+
+const divPlayerSelection = document.querySelector("#player-selection > img");
+divPlayerSelection.style.cssText = "display: none;";
+
+const btnRock = document.querySelector("#btn-rock");
 
 btnRock.addEventListener('click', () =>{
 	const playerSelection = 'rock';
+	const divPlayerSelection = document.querySelector("#player-selection-rock > img");
+	divPlayerSelection.style.cssText = "display: block;";
 	const computerSelection = computerPlay();
 	playRound(playerSelection, computerSelection);
 	alert(playRound(playerSelection, computerSelection));

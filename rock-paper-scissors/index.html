@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 </head>
+<style>
+    #player-selection-rock{
+        display: none;
+    }
+</style>
 <body>
+    <header>
+        <h1>Pedra, Papel & Tesoura</h1>
+    </header>
     <div id="container">
+        <div id="computer-selection">
+            <img>
+        </div>
+        <div class = play-ground>
+            <div id="player-selection-paper">
+                <img src="img/paper.jpg" width="100px" >
+            </div>
+            <div id="player-selection-rock">
+                <img src="img/rock.png" width="100px">
+            </div>
+            <div id="player-selection-scissors">
+                <img src="img/scissors.png" width="100px">
+            </div>
+        </div>
+        
         <button id="btn-rock">
             Rock
         </button>
@@ -17,6 +40,7 @@
             Scissors
         </button>
     </div>
-    <script src="script.js"></script>
+   
 </body>
+<script src="script.js"></script>
 </html>
