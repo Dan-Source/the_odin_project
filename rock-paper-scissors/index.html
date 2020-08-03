@@ -4,42 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <style>
-    #player-selection-rock{
-        display: none;
-    }
 </style>
 <body>
     <header>
         <h1>Pedra, Papel & Tesoura</h1>
     </header>
-    <div id="container">
-        <div id="computer-selection">
-            <img>
+
+    <div class="score-board">
+        <div id="user-label" class="badge">
+            Você
         </div>
-        <div class = play-ground>
-            <div id="player-selection-paper">
-                <img src="img/paper.jpg" width="100px" >
+        <div id="comp-label" class="badge">
+            Comp
+        </div>
+        <span id="user-score">0</span>:<span id="comp-score">0</span>
+    </div>
+        <div class="result">
+            <p> Paper covers Rock. You win.</p>
+        </div>
+
+        <div class ="choices">
+            <div class="choice" id="paper">
+                <img src="img/paper.png" width="100px" >
             </div>
-            <div id="player-selection-rock">
+            <div  class="choice" id="rock">
                 <img src="img/rock.png" width="100px">
             </div>
-            <div id="player-selection-scissors">
+            <div  class="choice" id="scissors">
                 <img src="img/scissors.png" width="100px">
             </div>
         </div>
-        
-        <button id="btn-rock">
-            Rock
-        </button>
-        <button id="btn-paper">
-            Paper
-        </button>
-        <button id="btn-scissors">
-            Scissors
-        </button>
-    </div>
+        <p id="action-menssage"> Make your move.</p>
+ 
    
 </body>
 <script src="script.js"></script>
