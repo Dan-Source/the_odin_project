@@ -33,6 +33,8 @@ header > h1{
 
 .badge{
     background: #e25840;
+    border-radius: 25%;
+    border: 1px solid white;
     font-size:  14px;
     padding: 2px 18px;
     font-family: 'Asap', sans-serif;
@@ -40,14 +42,14 @@ header > h1{
 
 #user-label{
     position: absolute;
-    top: 30px;
-    left: -25px;
+    top: 20px;
+    left: -30px;
 }
 
 #comp-label{
     position: absolute;
-    top: 30px;
-    right: -20px;
+    top: 20px;
+    right: -30px;
 }
 
 .result{
