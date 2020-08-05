@@ -29,14 +29,15 @@ function convertToWord(letter){
 }
 
 function win(userChoice, computerChoice){
+	const userSmallWord = "(user)".fontsize(3).sub();
+	const compSmallWord = "(comp)".fontsize(3).sub();
+	const userChoice_div = document.getElementById(userChoice)
 	useScore++;
 	userScore_span.innerHTML = useScore;
 	compScore_span.innerHTML = computerScore;
-	const userSmallWord = "(user)".fontsize(3).sub();
-	const compSmallWord = "(comp)".fontsize(3).sub();
 	result_div.innerHTML = `${convertToWord(userChoice)}${userSmallWord} derrota ${convertToWord(computerChoice)}${compSmallWord}. Você Ganhou! `;
-	document.getElementById(userChoice).classList.add('green-glow');
-	setTimeout(function () {document.getElementById(userChoice).classList.remove('green-glow') }, 1000)
+	userChoice_div.classList.add('green-glow');
+	setTimeout(() => {userChoice_div.classList.remove('green-glow'), 1000})
 }
 
 function lose(userChoice, computerChoice){
