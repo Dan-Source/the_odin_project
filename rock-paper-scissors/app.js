@@ -4,9 +4,9 @@ const userScore_span = document.getElementById("user-score")
 const compScore_span = document.getElementById("comp-score")
 const scoreBoard_div = document.querySelector(".score-board")
 const result_div = document.querySelector(".result > p")
-const rock_div = document.getElementById("rock")
-const paper_div = document.getElementById("paper")
-const scissors_div = document.getElementById("scissors")
+const rock_div = document.getElementById("r")
+const paper_div = document.getElementById("p")
+const scissors_div = document.getElementById("s")
 
 
 function getRandomInteger(min, max) {
@@ -35,6 +35,8 @@ function win(userChoice, computerChoice){
 	const userSmallWord = "(user)".fontsize(3).sub();
 	const compSmallWord = "(comp)".fontsize(3).sub();
 	result_div.innerHTML = `${convertToWord(userChoice)}${userSmallWord} derrota ${convertToWord(computerChoice)}${compSmallWord}. Você Ganhou! `;
+	document.getElementById(userChoice).classList.add('green-glow');
+	setTimeout(function () {document.getElementById(userChoice).classList.remove('green-glow') }, 1000)
 }
 
 function lose(userChoice, computerChoice){
@@ -44,6 +46,8 @@ function lose(userChoice, computerChoice){
 	const userSmallWord = "(user)".fontsize(3).sub();
 	const compSmallWord = "(comp)".fontsize(3).sub();
 	result_div.innerHTML = `${convertToWord(userChoice)}${userSmallWord} perde para ${convertToWord(computerChoice)}${compSmallWord}. Você Perdeu! `;
+	document.getElementById(userChoice).classList.add('red-glow');
+	setTimeout(function () {document.getElementById(userChoice).classList.remove('red-glow') }, 1000)
 }
 
 
@@ -53,6 +57,8 @@ function drawn(userChoice, computerChoice){
 	const userSmallWord = "(user)".fontsize(3).sub();
 	const compSmallWord = "(comp)".fontsize(3).sub();
 	result_div.innerHTML = `${convertToWord(userChoice)}${userSmallWord} é igual ${convertToWord(computerChoice)}${compSmallWord}. Empate! `;
+	document.getElementById(userChoice).classList.add('gray-glow');
+	setTimeout(function () {document.getElementById(userChoice).classList.remove('gray-glow') }, 1000)
 }
 
 
